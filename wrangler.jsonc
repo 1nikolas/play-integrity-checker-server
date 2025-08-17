@@ -1,0 +1,23 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "play-integrity-checker-server",
+    "main": "src/index.js",
+    "compatibility_date": "2025-08-17",
+    "preview_urls": false,
+    "workers_dev": false,
+    "keep_vars": true,
+    "observability": {
+        "enabled": false
+    },
+    "assets": {
+        "directory": "./public/",
+        "not_found_handling": "404-page",
+        "run_worker_first": [
+            "/api/check"
+        ]
+    },
+    "limits": {
+        "cpu_ms": 100
+    },
+    "placement": { "mode": "smart" }
+}
